@@ -13,7 +13,7 @@ Tested-With:       GHC == 6.12.1, GHC == 7.0.1
 Build-Type:        Simple
 Cabal-Version:     >= 1.6
 
-Flag benchmarks
+Flag benchmark
     Description: Enable benchmarks
     Default: False
 
@@ -32,6 +32,8 @@ Library
     GHC-Prof-Options: -Wall -fwarn-tabs -auto-all
 
 Executable benchmark-encoding
+    if !flag(benchmark)
+        Buildable: False
     Hs-Source-Dirs: benchmarks, .
     Main-Is: encoding.hs
     Other-Modules:
