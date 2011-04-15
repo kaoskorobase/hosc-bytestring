@@ -2,9 +2,11 @@
 --   functions.
 module Sound.OpenSoundControl.OSC.Builder
   ( buildOSC
-  , encodeOSC ) where
+  , encodeOSC
+  , encodeOSC' ) where
 
 import Data.Bits
+import qualified Data.ByteString as BS
 import qualified Data.ByteString.Lazy as B
 import qualified Blaze.ByteString.Builder as B
 import qualified Blaze.ByteString.Builder.Char8 as B
@@ -86,3 +88,7 @@ buildOSC (Bundle (UTCr t) l) = build_bundle_ntpi (utcr_ntpi t) l
 -- | Encode an OSC packet to a lazy ByteString.
 encodeOSC :: OSC -> B.ByteString
 encodeOSC = B.toLazyByteString . buildOSC
+
+-- | Encode an OSC packet to a strict ByteString.
+encodeOSC' :: OSC -> BS.ByteString
+encodeOSC' = B.toByteString . buildOSC
