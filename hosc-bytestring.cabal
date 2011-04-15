@@ -27,6 +27,7 @@ Library
       , network >= 2.3
     Exposed-modules:
         Sound.OpenSoundControl.ByteString
+        Sound.OpenSoundControl.OSC.Builder
         Sound.OpenSoundControl.Transport.UDP.ByteString
     GHC-Options:      -Wall -fwarn-tabs
     GHC-Prof-Options: -Wall -fwarn-tabs -auto-all
