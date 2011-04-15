@@ -28,8 +28,7 @@ Library
   GHC-Options:     -Wall -fwarn-tabs
   GHC-Prof-Options:-Wall -fwarn-tabs -auto-all
   Exposed-modules: Sound.OpenSoundControl.ByteString
-                   Sound.OpenSoundControl.Transport.ByteString.TCP
-                   Sound.OpenSoundControl.Transport.ByteString.UDP
+                   Sound.OpenSoundControl.Transport.UDP.ByteString
 
 Source-Repository  head
   Type:            darcs
